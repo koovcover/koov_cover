@@ -1,34 +1,39 @@
+"use client"
+
 import { Check, X, Clock, Droplets, Sparkles, Zap } from "lucide-react"
+import { useI18n } from '@/contexts/i18n-context'
 
 export default function TraditionalComparison() {
+  const { t } = useI18n()
+  
   const scenarios = [
     {
-      title: "Experiencia matutina (prisa)",
+      title: t('comparison.morning.title'),
       icon: Clock,
-      traditional: "Quitar funda, doblar, ensuciar manos, buscar dónde dejarla",
-      koov: "Abrir puerta, arrancar, partir limpio",
-      impact: "Ahorras 3-5 minutos diarios + sin estrés"
+      traditional: t('comparison.morning.traditional'),
+      koov: t('comparison.morning.koov'),
+      impact: t('comparison.morning.impact')
     },
     {
-      title: "Protección en clima húmedo",
+      title: t('comparison.weather.title'),
       icon: Droplets,
-      traditional: "Condensación atrapada, olor a humedad, tela pegajosa",
-      koov: "Ambiente seco controlado, ventilación adecuada",
-      impact: "Menos óxido, mejor conservación de partes metálicas"
+      traditional: t('comparison.weather.traditional'),
+      koov: t('comparison.weather.koov'),
+      impact: t('comparison.weather.impact')
     },
     {
-      title: "Mantenimiento y limpieza",
+      title: t('comparison.maintenance.title'),
       icon: Sparkles,
-      traditional: "Polvo adherido, manchas permanentes, deterioro visible",
-      koov: "Limpieza ocasional, aspecto profesional constante",
-      impact: "Mantiene valor de reventa de tu motocicleta"
+      traditional: t('comparison.maintenance.traditional'),
+      koov: t('comparison.maintenance.koov'),
+      impact: t('comparison.maintenance.impact')
     },
     {
-      title: "Uso diario habitual",
+      title: t('comparison.daily.title'),
       icon: Zap,
-      traditional: "Cargar bulto húmedo/sucio, buscar dónde guardarlo",
-      koov: "Acceso directo sin manipular materiales",
-      impact: "Zero complicaciones, máxima practicidad"
+      traditional: t('comparison.daily.traditional'),
+      koov: t('comparison.daily.koov'),
+      impact: t('comparison.daily.impact')
     }
   ]
 
@@ -37,10 +42,10 @@ export default function TraditionalComparison() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="font-bebas text-4xl md:text-5xl text-white mb-4">
-            Comparación: Protector Tradicional vs KOOV COVER
+            {t('comparison.title')}
           </h2>
           <p className="text-xl text-[var(--koov-light)] mb-8 max-w-3xl mx-auto">
-            Análisis detallado de experiencia de usuario en situaciones cotidianas del motociclista limeño
+            {t('comparison.subtitle')}
           </p>
         </div>
 
@@ -48,22 +53,22 @@ export default function TraditionalComparison() {
         <div className="bg-[var(--koov-carbon)] rounded-t-2xl overflow-hidden mb-0">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
             <div className="bg-[var(--koov-carbon)] p-6 border-r border-[var(--koov-graphite)]">
-              <h3 className="font-bebas text-lg text-[var(--koov-electric)]">SITUACIÓN</h3>
+              <h3 className="font-bebas text-lg text-[var(--koov-electric)]">{t('comparison.situation')}</h3>
             </div>
             <div className="bg-red-900/30 p-6 border-r border-[var(--koov-graphite)]">
               <div className="flex items-center gap-2">
                 <X className="w-5 h-5 text-red-400" />
-                <h3 className="font-bebas text-lg text-white">PROTECTOR TRADICIONAL</h3>
+                <h3 className="font-bebas text-lg text-white">{t('comparison.traditional')}</h3>
               </div>
             </div>
             <div className="bg-[var(--koov-electric)]/20 p-6 border-r border-[var(--koov-graphite)]">
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-[var(--koov-electric)]" />
-                <h3 className="font-bebas text-lg text-white">KOOV COVER</h3>
+                <h3 className="font-bebas text-lg text-white">{t('comparison.koov')}</h3>
               </div>
             </div>
             <div className="bg-[var(--koov-carbon)] p-6">
-              <h3 className="font-bebas text-lg text-[var(--koov-lime)]">BENEFICIO REAL</h3>
+              <h3 className="font-bebas text-lg text-[var(--koov-lime)]">{t('comparison.benefit')}</h3>
             </div>
           </div>
         </div>
@@ -105,23 +110,23 @@ export default function TraditionalComparison() {
         <div className="mt-12 bg-gradient-to-r from-[var(--koov-electric)] to-blue-600 rounded-2xl p-8">
           <div className="text-center">
             <h3 className="font-bebas text-3xl text-white mb-4">
-              Resultado: Una experiencia completamente diferente
+              {t('comparison.conclusion.title')}
             </h3>
             <p className="text-xl text-white mb-6">
-              KOOV COVER no es una "funda mejorada" - es una solución integral diseñada por peruanos para peruanos
+              {t('comparison.conclusion.subtitle')}
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="font-bebas text-2xl text-white">5 MIN</div>
-                <div className="text-white/80 text-sm">Ahorras diario</div>
+                <div className="font-bebas text-2xl text-white">{t('comparison.stats.time')}</div>
+                <div className="text-white/80 text-sm">{t('comparison.stats.time.desc')}</div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="font-bebas text-2xl text-white">3+ AÑOS</div>
-                <div className="text-white/80 text-sm">Vida útil garantizada</div>
+                <div className="font-bebas text-2xl text-white">{t('comparison.stats.life')}</div>
+                <div className="text-white/80 text-sm">{t('comparison.stats.life.desc')}</div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="font-bebas text-2xl text-white">CERO</div>
-                <div className="text-white/80 text-sm">Complicaciones diarias</div>
+                <div className="font-bebas text-2xl text-white">{t('comparison.stats.hassle')}</div>
+                <div className="text-white/80 text-sm">{t('comparison.stats.hassle.desc')}</div>
               </div>
             </div>
           </div>
@@ -130,12 +135,12 @@ export default function TraditionalComparison() {
         {/* CTA de la sección */}
         <div className="text-center mt-12">
           <a
-            href="https://api.whatsapp.com/send/?phone=+51949165670&text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+KOOV+COVER"
+            href={`https://api.whatsapp.com/send/?phone=+51949165670&text=${encodeURIComponent(t('whatsapp.message'))}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-lg px-8 py-4 font-sans"
           >
-            Experimenta la diferencia
+            {t('comparison.cta')}
           </a>
         </div>
       </div>

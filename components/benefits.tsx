@@ -1,36 +1,41 @@
+"use client"
+
 import { Shield, Wrench, Package, Building, Clock, Factory } from "lucide-react"
+import { useI18n } from "@/contexts/i18n-context"
 
 export default function Benefits() {
+  const { t } = useI18n()
+
   const benefits = [
     {
       icon: Shield,
-      title: "Protección climática integral",
-      description: "Resguarda tu moto del sol intenso, lluvia torrencial y polvo urbano las 24 horas.",
+      title: t('benefits.weather.title'),
+      description: t('benefits.weather.description'),
     },
     {
       icon: Wrench,
-      title: "Menos óxido en cadena y telescopios",
-      description: "Mantiene las partes metálicas secas y protegidas, extendiendo la vida útil de tu moto.",
+      title: t('benefits.maintenance.title'),
+      description: t('benefits.maintenance.description'),
     },
     {
       icon: Package,
-      title: "Portabilidad y fácil armado",
-      description: "Se pliega compactamente y se despliega en minutos sin herramientas especiales.",
+      title: t('benefits.portability.title'),
+      description: t('benefits.portability.description'),
     },
     {
       icon: Building,
-      title: "Ideal para espacios urbanos sin cochera",
-      description: "Perfecto para departamentos, oficinas y lugares donde no hay estacionamiento techado.",
+      title: t('benefits.storage.title'),
+      description: t('benefits.storage.description'),
     },
     {
       icon: Clock,
-      title: "Ahorra tiempo de limpieza",
-      description: "Reduce significativamente el tiempo dedicado al mantenimiento y limpieza diaria.",
+      title: t('benefits.time.title'),
+      description: t('benefits.time.description'),
     },
     {
       icon: Factory,
-      title: "Fabricación local, calidad garantizada",
-      description: "Control directo en cada etapa de producción y soporte especializado del fabricante.",
+      title: t('benefits.quality.title'),
+      description: t('benefits.quality.description'),
     },
   ]
 
@@ -39,10 +44,10 @@ export default function Benefits() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 text-balance">
-            ¿Por qué elegir KOOV COVER?
+            {t('benefits.title')}
           </h2>
           <p className="text-lg md:text-xl text-[var(--koov-light-gray)] max-w-2xl mx-auto text-pretty">
-            Diseñado específicamente para motociclistas que buscan protección práctica y eficiente
+            {t('benefits.subtitle')}
           </p>
         </div>
 

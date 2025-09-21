@@ -93,6 +93,7 @@
   --koov-gray: #666666;
   --koov-light-gray: #cccccc;
   --koov-blue: #00b7ff;
+  --koov-blue-adicional: #003347;
 
   /* Color tokens principales */
   --color-primary: var(--koov-electric);
@@ -223,16 +224,41 @@
   }
 }
 
+/* Modo oscuro (por defecto) */
+:root {
+  --bg-primary: var(--koov-carbon);
+  --bg-secondary: var(--koov-dark-gray);
+  --bg-tertiary: var(--koov-graphite);
+  --text-primary: var(--koov-white);
+  --text-secondary: var(--koov-light-gray);
+  --text-muted: var(--koov-gray);
+  --border-color: var(--koov-graphite);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Modo claro */
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: var(--koov-carbon);
+  --text-secondary: var(--koov-gray);
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 @layer base {
   * {
-    border-color: var(--koov-graphite);
+    border-color: var(--border-color);
     outline-color: var(--koov-electric);
   }
 
   body {
-    background-color: var(--koov-carbon);
-    color: var(--koov-white);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1,

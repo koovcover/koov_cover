@@ -1,8 +1,10 @@
 "use client"
 
 import { Shield, Zap, Package } from "lucide-react"
+import { useI18n } from "@/contexts/i18n-context"
 
 export default function Hero() {
+  const { t } = useI18n()
   const whatsappUrl =
     "https://api.whatsapp.com/send/?phone=+51949165670&text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+KOOV+COVER"
 
@@ -18,7 +20,7 @@ export default function Hero() {
       id="inicio"
       className="pt-16 section-padding bg-[var(--koov-carbon)] relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(18,18,18,0.35), rgba(18,18,18,0.8)), url('/koovcover_en_vereda.png')`,
+        backgroundImage: `linear-gradient(rgba(18,18,18,0.35), rgba(18,18,18,0.8))`,
       }}
     >
       <div className="container-custom">
@@ -27,13 +29,13 @@ export default function Hero() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bebas text-[var(--koov-white)] leading-tight">
-                Tu moto siempre limpia y protegida
+                {t('hero.title')}
               </h1>
               <p className="text-xl text-[var(--koov-light)] leading-relaxed font-sans">
-                Garaje portátil plegable que cuida tu moto del sol, la lluvia y el polvo.
+                {t('hero.subtitle')}
               </p>
               <p className="text-lg text-[var(--koov-electric)] font-medium font-sans">
-                Diseñado en Perú para proteger tu moto en cualquier lugar
+                {t('hero.tagline')}
               </p>
             </div>
 
@@ -43,19 +45,19 @@ export default function Hero() {
                 <div className="w-10 h-10 bg-[var(--koov-electric)] rounded-lg flex items-center justify-center">
                   <Zap className="w-5 h-5 text-[var(--koov-carbon)]" />
                 </div>
-                <span className="font-medium text-[var(--koov-white)] font-sans">Rápido de usar</span>
+                <span className="font-medium text-[var(--koov-white)] font-sans">{t('hero.benefit1')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[var(--koov-electric)] rounded-lg flex items-center justify-center">
                   <Package className="w-5 h-5 text-[var(--koov-carbon)]" />
                 </div>
-                <span className="font-medium text-[var(--koov-white)] font-sans">Diseño portátil</span>
+                <span className="font-medium text-[var(--koov-white)] font-sans">{t('hero.benefit2')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[var(--koov-electric)] rounded-lg flex items-center justify-center">
                   <Shield className="w-5 h-5 text-[var(--koov-carbon)]" />
                 </div>
-                <span className="font-medium text-[var(--koov-white)] font-sans">Protección total</span>
+                <span className="font-medium text-[var(--koov-white)] font-sans">{t('hero.benefit3')}</span>
               </div>
             </div>
 
@@ -67,14 +69,14 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-12 py-5 font-sans inline-block"
               >
-                Protege tu moto ahora
+                {t('hero.cta')}
               </a>
               <div>
                 <button
                   onClick={scrollToBeneficios}
                   className="text-[var(--koov-electric)] hover:text-[var(--koov-white)] transition-colors font-medium font-sans ml-6"
                 >
-                  Ver beneficios →
+                  {t('hero.seeBenefits')} →
                 </button>
               </div>
             </div>
@@ -90,8 +92,8 @@ export default function Hero() {
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-[var(--koov-light)] rounded-xl p-4 shadow-lg border border-[var(--koov-graphite)]">
-              <div className="text-sm font-medium text-[var(--koov-carbon)] font-sans">Primer garaje</div>
-              <div className="text-sm text-[var(--koov-graphite)] font-sans">portátil plegable</div>
+              <div className="text-sm font-medium text-[var(--koov-carbon)] font-sans">{t('hero.highlight1')}</div>
+              <div className="text-sm text-[var(--koov-graphite)] font-sans">{t('hero.highlight2')}</div>
             </div>
           </div>
         </div>

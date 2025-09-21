@@ -2,40 +2,36 @@
 
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
+import { useI18n } from '@/contexts/i18n-context'
 
 export default function FAQ() {
+  const { t } = useI18n()
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs = [
     {
-      question: "¿Protege contra lluvia intensa y polvo fino?",
-      answer:
-        "Sí, KOOV COVER está diseñado con materiales impermeables de alta calidad que protegen completamente contra lluvia intensa, polvo fino y rayos UV. Su diseño hermético garantiza que tu moto permanezca completamente seca y limpia.",
+      question: t('faq.1.question'),
+      answer: t('faq.1.answer'),
     },
     {
-      question: "¿Cuánto tiempo toma desplegarlo?",
-      answer:
-        "El proceso de despliegue toma entre 3 a 5 minutos. Gracias a su diseño intuitivo y sistema de plegado optimizado, cualquier persona puede armarlo rápidamente sin necesidad de herramientas especiales o experiencia previa.",
+      question: t('faq.2.question'),
+      answer: t('faq.2.answer'),
     },
     {
-      question: "¿Necesita instalación fija?",
-      answer:
-        "No, KOOV COVER es completamente portátil. No requiere instalación permanente, tornillos o modificaciones en el suelo. Puedes moverlo fácilmente a cualquier ubicación según tus necesidades.",
+      question: t('faq.3.question'),
+      answer: t('faq.3.answer'),
     },
     {
-      question: "¿Sirve para espacios reducidos?",
-      answer:
-        "Absolutamente. KOOV COVER está especialmente diseñado para espacios urbanos limitados como patios pequeños, azoteas, estacionamientos de departamentos y áreas compactas donde las cocheras tradicionales no son viables.",
+      question: t('faq.4.question'),
+      answer: t('faq.4.answer'),
     },
     {
-      question: "¿Cómo se limpia y mantiene?",
-      answer:
-        "El mantenimiento es muy sencillo. Solo necesitas limpiar la superficie con agua y jabón suave ocasionalmente. Los materiales son resistentes a la intemperie y no requieren tratamientos especiales o mantenimiento complejo.",
+      question: t('faq.5.question'),
+      answer: t('faq.5.answer'),
     },
     {
-      question: "¿Hacen envíos a todo el Perú?",
-      answer:
-        "Sí, realizamos envíos a nivel nacional. Contamos con cobertura en todas las principales ciudades del Perú. Los tiempos de entrega varían según la ubicación, pero generalmente oscilan entre 2 a 7 días hábiles.",
+      question: t('faq.6.question'),
+      answer: t('faq.6.answer'),
     },
   ]
 
@@ -44,10 +40,10 @@ export default function FAQ() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 text-balance">
-            Preguntas frecuentes
+            {t('faq.title')}
           </h2>
           <p className="text-lg md:text-xl text-[var(--koov-light-gray)] max-w-2xl mx-auto text-pretty">
-            Resolvemos las dudas más comunes sobre KOOV COVER
+            {t('faq.subtitle')}
           </p>
         </div>
 

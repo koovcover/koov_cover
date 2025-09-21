@@ -1,6 +1,9 @@
 import type React from "react"
+import type { Viewport } from 'next'
 import { Montserrat, Inter, Bebas_Neue } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { I18nProvider } from "@/contexts/i18n-context"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -59,9 +62,13 @@ export const metadata = {
       "Protege tu moto del sol, lluvia y polvo con KOOV COVER. Garaje portátil plegable fabricado en Perú. ¡Cotiza gratis por WhatsApp!",
     images: ["/koov_cover.jpg"],
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#1E40AF",
-    generator: 'v0.app'
+  generator: 'v0.app'
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1E40AF"
 }
 
 export default function RootLayout({
@@ -74,7 +81,21 @@ export default function RootLayout({
       lang="es"
       className={`${montserrat.variable} ${inter.variable} ${bebasNeue.variable} antialiased scroll-smooth`}
     >
-      <body>{children}</body>
+      <head>
+        <link rel="icon" href="/logo_koov_cover.svg" type="image/svg+xml" />
+      </head>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={true}
+          disableTransitionOnChange
+        >
+          <I18nProvider>
+            {children}
+          </I18nProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

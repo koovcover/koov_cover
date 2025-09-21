@@ -1,53 +1,53 @@
+"use client"
+
 import { MapPin, Wrench, Shield, Anchor, RotateCcw, CheckCircle } from "lucide-react"
+import { useI18n } from "@/contexts/i18n-context"
 
 export default function HowItWorks() {
+  const { t } = useI18n()
+
   const steps = [
     {
       icon: MapPin,
-      title: "Preparar el área de instalación",
-      description:
-        "Selecciona un espacio plano de al menos el área mínima según el tamaño KOOV COVER seleccionado. Asegúrate de que el piso esté limpio y nivelado.",
+      title: t('howItWorks.step1.title'),
+      description: t('howItWorks.step1.description'),
     },
     {
       icon: Wrench,
-      title: "Armar la estructura metálica",
-      description:
-        "Ensambla los tubos y accesorios siguiendo la numeración y el manual. Conecta los arcos plegables y las uniones con pernos y tornillos incluidos. Verifica que las uniones permitan el movimiento de apertura y cierre.",
+      title: t('howItWorks.step2.title'),
+      description: t('howItWorks.step2.description'),
     },
     {
       icon: Shield,
-      title: "Colocar el forro protector",
-      description:
-        "Despliega el forro de Lona/Tarflex/Concord. Ajusta el material sobre la estructura con sujetadores o velcros incluidos. Asegúrate de que quede bien tensado para resistir viento y lluvia.",
+      title: t('howItWorks.step3.title'),
+      description: t('howItWorks.step3.description'),
     },
     {
       icon: Anchor,
-      title: "Fijar al suelo (opcional)",
-      description:
-        "Coloca objetos pesados como pesas o bloques de concreto pequeños en esquinas de la estructura en caso sea necesario. Utiliza pernos de anclaje o estacas para mayor estabilidad en ambientes poco seguros.",
+      title: t('howItWorks.step4.title'),
+      description: t('howItWorks.step4.description'),
     },
     {
       icon: RotateCcw,
-      title: "Prueba de apertura y cierre",
-      description:
-        "Abre y cierra la cúpula varias veces para comprobar el movimiento. Ajusta las uniones si notas resistencia.",
+      title: t('howItWorks.step5.title'),
+      description: t('howItWorks.step5.description'),
     },
     {
       icon: CheckCircle,
-      title: "Listo para usar",
-      description: "Estaciona tu moto dentro. Cierra el KOOV COVER para protegerla de lluvia, sol, polvo y rayaduras.",
+      title: t('howItWorks.step6.title'),
+      description: t('howItWorks.step6.description'),
     },
   ]
 
   return (
-    <section id="como-funciona" className="section-padding bg-gray-800">
+    <section id="como-funciona" className="section-padding bg-[var(--koov-dark-gray)]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-            🔧 Proceso de Instalación del KOOV COVER
+            {t('howItWorks.title')}
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Sigue estos pasos detallados para instalar correctamente tu garaje portátil
+          <p className="text-xl text-[var(--koov-light-gray)] max-w-2xl mx-auto">
+            {t('howItWorks.subtitle')}
           </p>
         </div>
 
@@ -55,18 +55,18 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div key={index} className="text-center relative">
               {/* Step number */}
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+              <div className="w-16 h-16 bg-[var(--koov-electric)] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
                 <span className="text-2xl font-bold text-white">{index + 1}</span>
               </div>
 
               {/* Icon */}
-              <div className="w-20 h-20 bg-black rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6">
-                <step.icon className="w-10 h-10 text-blue-500" />
+              <div className="w-20 h-20 bg-[var(--koov-black)] rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6">
+                <step.icon className="w-10 h-10 text-[var(--koov-electric)]" />
               </div>
 
               {/* Content */}
               <h3 className="text-xl font-serif font-semibold text-white mb-4">{step.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">{step.description}</p>
+              <p className="text-[var(--koov-light-gray)] leading-relaxed text-sm">{step.description}</p>
             </div>
           ))}
         </div>

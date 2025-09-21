@@ -1,6 +1,11 @@
+"use client"
+import { useI18n } from '@/contexts/i18n-context'
+
 export default function WhatsAppFloat() {
-  const whatsappUrl =
-    "https://api.whatsapp.com/send/?phone=+51949165670&text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+KOOV+COVER"
+  const { t } = useI18n()
+  
+  const message = encodeURIComponent(t('whatsapp.message'))
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=+51949165670&text=${message}`
 
   return (
     <a
@@ -8,7 +13,7 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed right-4 bottom-4 md:right-6 md:bottom-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20b358] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group"
-      aria-label="Contactar por WhatsApp"
+      aria-label={t('whatsapp.aria')}
     >
       <svg
         width="28"

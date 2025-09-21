@@ -1,10 +1,14 @@
+"use client"
+import { useI18n } from '@/contexts/i18n-context'
+
 export default function Location() {
+  const { t } = useI18n()
   return (
     <section className="section-padding bg-[var(--koov-black)]">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bebas text-white mb-4">Nuestra oficina</h2>
-          <p className="text-xl text-[var(--koov-light-gray)]">Av. Colonial 3046, Cercado de Lima</p>
+          <h2 className="text-3xl md:text-4xl font-bebas text-white mb-4">{t('location.title')}</h2>
+          <p className="text-xl text-[var(--koov-light-gray)]">{t('location.subtitle')}</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
