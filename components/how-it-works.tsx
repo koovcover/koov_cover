@@ -40,13 +40,13 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section id="como-funciona" className="section-padding bg-[var(--koov-dark-gray)]">
+    <section id="como-funciona" className="section-padding theme-bg-secondary">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold theme-text-primary mb-4">
             {t('howItWorks.title')}
           </h2>
-          <p className="text-xl text-[var(--koov-light-gray)] max-w-2xl mx-auto">
+          <p className="text-xl theme-text-secondary max-w-2xl mx-auto">
             {t('howItWorks.subtitle')}
           </p>
         </div>
@@ -55,18 +55,18 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div key={index} className="text-center relative">
               {/* Step number */}
-              <div className="w-16 h-16 bg-[var(--koov-electric)] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+              <div className="w-16 h-16 bg-[var(--theme-brand-primary)] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 theme-shadow-md">
                 <span className="text-2xl font-bold text-white">{index + 1}</span>
               </div>
 
               {/* Icon */}
-              <div className="w-20 h-20 bg-[var(--koov-black)] rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6">
-                <step.icon className="w-10 h-10 text-[var(--koov-electric)]" />
+              <div className="w-20 h-20 theme-bg-card rounded-2xl theme-shadow-lg flex items-center justify-center mx-auto mb-6 theme-border border">
+                <step.icon className="w-10 h-10 theme-text-accent" />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-serif font-semibold text-white mb-4">{step.title}</h3>
-              <p className="text-[var(--koov-light-gray)] leading-relaxed text-sm">{step.description}</p>
+              <h3 className="text-xl font-serif font-semibold theme-text-primary mb-4">{step.title}</h3>
+              <p className="theme-text-secondary leading-relaxed text-sm">{step.description}</p>
             </div>
           ))}
         </div>

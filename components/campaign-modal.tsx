@@ -7,17 +7,22 @@ import { useI18n } from "@/contexts/i18n-context"
 interface CampaignModalProps {
   open?: boolean
   onOpenChange?: (open: boolean) => void
-  autoOpen?: boolean
 }
 
-export default function CampaignModal({ open: controlledOpen, onOpenChange, autoOpen = false }: CampaignModalProps) {
+export default function CampaignModal({ open: controlledOpen, onOpenChange }: CampaignModalProps) {
   const { t } = useI18n()
+  const [mounted, setMounted] = useState(false)
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   
   const open = controlledOpen !== undefined ? controlledOpen : uncontrolledOpen
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   
   const setOpen = useCallback((newOpen: boolean) => {
+    console.log('Modal setOpen called:', newOpen)
     if (onOpenChange) {
       onOpenChange(newOpen)
     } else {
@@ -26,35 +31,19 @@ export default function CampaignModal({ open: controlledOpen, onOpenChange, auto
   }, [onOpenChange])
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !autoOpen) return;
-
-    try {
-      // Verificar si el modal ya se mostró hoy
-      const lastShown = localStorage.getItem('modal-last-shown')
-      const today = new Date().toDateString()
-      
-      if (lastShown === today) return;
-
-      const timer = setTimeout(() => {
-        setOpen(true);
-        localStorage.setItem('modal-last-shown', today);
-      }, 2500);
-
-      return () => clearTimeout(timer);
-    } catch (error) {
-      console.error('Error accessing localStorage:', error)
-    }
-  }, [autoOpen, setOpen])
-
-  useEffect(() => {
-    if (open) {
+    if (open && mounted) {
+      console.log('Setting modal visible')
       setIsVisible(true)
     }
-  }, [open])
+  }, [open, mounted])
 
   const handleClose = useCallback(() => {
+    console.log('Modal closing')
     setIsVisible(false)
-    setTimeout(() => setOpen(false), 200)
+    setTimeout(() => {
+      console.log('Modal setting open false')
+      setOpen(false)
+    }, 200)
   }, [setOpen])
 
   const handleBackdropClick = useCallback((e: React.MouseEvent) => {
@@ -71,10 +60,7 @@ export default function CampaignModal({ open: controlledOpen, onOpenChange, auto
     handleClose()
   }, [handleClose])
 
-
-  console.log('Modal render:', { open, autoOpen })
-  
-  if (!open) return null
+  if (!mounted || !open) return null
 
   return (
     <div 

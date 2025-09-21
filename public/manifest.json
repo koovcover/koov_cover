@@ -1,0 +1,23 @@
+{
+  "name": "KOOV COVER - Garaje Portátil Plegable para Motos",
+  "short_name": "KOOV COVER",
+  "description": "Protege tu moto del sol, lluvia y polvo con KOOV COVER. Garaje portátil plegable fabricado en Perú.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E40AF",
+  "theme_color": "#1E40AF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo_koov_cover.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "shopping", "automotive"],
+  "lang": "es-PE",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

@@ -15,8 +15,7 @@ export default function Header() {
     setMounted(true)
   }, [])
 
-  const whatsappUrl =
-    "https://api.whatsapp.com/send/?phone=+51949165670&text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+KOOV+COVER"
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=+51949165670&text=${encodeURIComponent(t('whatsapp.message'))}`
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -60,7 +59,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-[var(--bg-primary)]/95 backdrop-blur-sm border-b border-[var(--border-color)] z-50">
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-lg">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -76,7 +75,7 @@ export default function Header() {
                 height={40}
                 className="rounded-lg object-cover"
               />
-              <span className="text-2xl font-serif font-bold text-[var(--text-primary)] flex items-center gap-2">
+              <span className="text-2xl font-serif font-bold text-gray-900 flex items-center gap-2">
                 KOOV COVER
               </span>
             </button>
@@ -88,40 +87,40 @@ export default function Header() {
               <>
                 <button
                   onClick={() => scrollToSection("beneficios")}
-                  className={`transition-colors ${
+                  className={`transition-colors font-medium ${
                     activeSection === "beneficios" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)]"
+                      : "text-gray-700 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.benefits')}
                 </button>
                 <button
                   onClick={() => scrollToSection("como-funciona")}
-                  className={`transition-colors ${
+                  className={`transition-colors font-medium ${
                     activeSection === "como-funciona" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)]"
+                      : "text-gray-700 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.howItWorks')}
                 </button>
                 <button
                   onClick={() => scrollToSection("preguntas")}
-                  className={`transition-colors ${
+                  className={`transition-colors font-medium ${
                     activeSection === "preguntas" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)]"
+                      : "text-gray-700 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.questions')}
                 </button>
                 <button
                   onClick={() => scrollToSection("contacto")}
-                  className={`transition-colors ${
+                  className={`transition-colors font-medium ${
                     activeSection === "contacto" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)]"
+                      : "text-gray-700 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.contact')}
@@ -138,7 +137,7 @@ export default function Header() {
                 href="https://www.instagram.com/koov.cover/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-secondary)] hover:text-[var(--koov-electric)] transition-colors"
+                className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -147,7 +146,7 @@ export default function Header() {
                 href="https://www.tiktok.com/@koovcover"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-secondary)] hover:text-[var(--koov-electric)] transition-colors"
+                className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
                 aria-label="TikTok"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -158,7 +157,7 @@ export default function Header() {
                 href="https://www.facebook.com/profile.php?id=61579959260936"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-secondary)] hover:text-[var(--koov-electric)] transition-colors"
+                className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -183,7 +182,7 @@ export default function Header() {
             {/* Mobile menu toggle */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 text-[var(--text-primary)] hover:text-[var(--koov-electric)] transition-colors"
+              className="md:hidden p-2 text-gray-700 hover:text-[var(--koov-electric)] transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -193,64 +192,64 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && mounted && (
-          <div className="md:hidden border-t border-[var(--border-color)] bg-[var(--bg-primary)]/95 backdrop-blur-sm">
+          <div className="md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm">
             <nav className="py-4 space-y-2">
               <button
                 onClick={() => scrollToSection("inicio")}
-                className={`block w-full text-left px-4 py-2 transition-colors ${
+                className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "inicio" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)] hover:bg-[var(--bg-tertiary)]"
+                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
                 }`}
               >
-                Inicio
+                {t('nav.home')}
               </button>
               <button
                 onClick={() => scrollToSection("beneficios")}
-                className={`block w-full text-left px-4 py-2 transition-colors ${
+                className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "beneficios" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)] hover:bg-[var(--bg-tertiary)]"
+                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
                 }`}
               >
                 {t('nav.benefits')}
               </button>
               <button
                 onClick={() => scrollToSection("fabricacion-medida")}
-                className={`block w-full text-left px-4 py-2 transition-colors ${
+                className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "fabricacion-medida" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)] hover:bg-[var(--bg-tertiary)]"
+                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
                 }`}
               >
-                Fabricación
+                {t('nav.manufacturing')}
               </button>
               <button
                 onClick={() => scrollToSection("como-funciona")}
-                className={`block w-full text-left px-4 py-2 transition-colors ${
+                className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "como-funciona" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)] hover:bg-[var(--bg-tertiary)]"
+                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
                 }`}
               >
                 {t('nav.howItWorks')}
               </button>
               <button
                 onClick={() => scrollToSection("preguntas")}
-                className={`block w-full text-left px-4 py-2 transition-colors ${
+                className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "preguntas" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)] hover:bg-[var(--bg-tertiary)]"
+                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
                 }`}
               >
                 {t('nav.questions')}
               </button>
               <button
                 onClick={() => scrollToSection("contacto")}
-                className={`block w-full text-left px-4 py-2 transition-colors ${
+                className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "contacto" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-[var(--text-secondary)] hover:text-[var(--koov-electric)] hover:bg-[var(--bg-tertiary)]"
+                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
                 }`}
               >
                 {t('nav.contact')}
@@ -272,13 +271,13 @@ export default function Header() {
               </div>
 
               {/* Mobile social links */}
-              <div className="px-4 py-2 border-t border-[var(--border-color)] mt-2 pt-4">
+              <div className="px-4 py-2 border-t border-gray-200 mt-2 pt-4">
                 <div className="flex items-center justify-center gap-6">
                   <a
                     href="https://www.instagram.com/koov.cover/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[var(--text-secondary)] hover:text-[var(--koov-electric)] transition-colors"
+                    className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram size={24} />
@@ -287,7 +286,7 @@ export default function Header() {
                     href="https://www.tiktok.com/@koovcover"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[var(--text-secondary)] hover:text-[var(--koov-electric)] transition-colors"
+                    className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
                     aria-label="TikTok"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -298,7 +297,7 @@ export default function Header() {
                     href="https://www.facebook.com/profile.php?id=61579959260936"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[var(--text-secondary)] hover:text-[var(--koov-electric)] transition-colors"
+                    className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
                     aria-label="Facebook"
                   >
                     <Facebook size={24} />

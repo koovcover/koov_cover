@@ -12,7 +12,7 @@ export default function WhatsAppFloat() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed right-4 bottom-4 md:right-6 md:bottom-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20b358] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group"
+      className="fixed right-4 bottom-4 md:right-6 md:bottom-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20b358] rounded-full flex items-center justify-center theme-shadow-lg hover:theme-shadow-lg transition-all duration-200 group"
       aria-label={t('whatsapp.aria')}
     >
       <svg

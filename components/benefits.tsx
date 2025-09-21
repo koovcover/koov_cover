@@ -40,13 +40,13 @@ export default function Benefits() {
   ]
 
   return (
-    <section id="beneficios" className="section-padding bg-[var(--koov-black)] relative">
+    <section id="beneficios" className="section-padding theme-gradient-secondary relative">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold theme-text-primary mb-4 text-balance">
             {t('benefits.title')}
           </h2>
-          <p className="text-lg md:text-xl text-[var(--koov-light-gray)] max-w-2xl mx-auto text-pretty">
+          <p className="text-lg md:text-xl theme-text-secondary max-w-2xl mx-auto text-pretty">
             {t('benefits.subtitle')}
           </p>
         </div>
@@ -55,15 +55,15 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-[var(--koov-dark-gray)] rounded-2xl p-6 md:p-8 hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="theme-gradient-card rounded-2xl p-6 md:p-8 theme-shadow-md hover:theme-shadow-lg hover:scale-105 transition-all duration-300 theme-border border backdrop-blur-sm"
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-[var(--koov-blue)] rounded-xl flex items-center justify-center mb-4 md:mb-6">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-[var(--theme-brand-primary)] rounded-xl flex items-center justify-center mb-4 md:mb-6">
                 <benefit.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
               </div>
-              <h3 className="text-lg md:text-xl font-serif font-semibold text-white mb-3 md:mb-4 text-balance">
+              <h3 className="text-lg md:text-xl font-serif font-semibold theme-text-primary mb-3 md:mb-4 text-balance">
                 {benefit.title}
               </h3>
-              <p className="text-sm md:text-base text-[var(--koov-light-gray)] leading-relaxed text-pretty">
+              <p className="text-sm md:text-base theme-text-secondary leading-relaxed text-pretty">
                 {benefit.description}
               </p>
             </div>

@@ -36,13 +36,13 @@ export default function FAQ() {
   ]
 
   return (
-    <section id="preguntas" className="section-padding bg-[var(--koov-dark-gray)]">
+    <section id="preguntas" className="section-padding theme-bg-secondary">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold theme-text-primary mb-4 text-balance">
             {t('faq.title')}
           </h2>
-          <p className="text-lg md:text-xl text-[var(--koov-light-gray)] max-w-2xl mx-auto text-pretty">
+          <p className="text-lg md:text-xl theme-text-secondary max-w-2xl mx-auto text-pretty">
             {t('faq.subtitle')}
           </p>
         </div>
@@ -51,23 +51,22 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-[var(--koov-black)] rounded-2xl shadow-sm border border-[var(--koov-gray)] overflow-hidden"
+              className="theme-gradient-card rounded-2xl theme-shadow-sm theme-border border overflow-hidden backdrop-blur-sm"
             >
               <button
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-left flex items-center justify-between hover:bg-[var(--koov-dark-gray)] transition-colors duration-200"
+                className="w-full px-4 md:px-8 py-4 md:py-6 text-left flex items-center justify-between theme-hover transition-colors duration-200"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <h3 className="text-base md:text-lg font-semibold text-white pr-4 text-balance">{faq.question}</h3>
+                <h3 className="text-base md:text-lg font-semibold theme-text-primary pr-4 text-balance">{faq.question}</h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-[var(--koov-light-gray)] transition-transform duration-200 flex-shrink-0 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`w-5 h-5 theme-text-secondary transition-transform duration-200 flex-shrink-0 ${openIndex === index ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
               {openIndex === index && (
                 <div className="px-4 md:px-8 pb-4 md:pb-6">
-                  <p className="text-sm md:text-base text-[var(--koov-light-gray)] leading-relaxed text-pretty">
+                  <p className="text-sm md:text-base theme-text-secondary leading-relaxed text-pretty">
                     {faq.answer}
                   </p>
                 </div>

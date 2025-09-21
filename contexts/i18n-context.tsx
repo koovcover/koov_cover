@@ -26,6 +26,8 @@ const translations = {
     'nav.questions': 'Perguntas',
     'nav.contact': 'Contato',
     'nav.contactUs': 'Fale Conosco',
+    'nav.home': 'Início',
+    'nav.manufacturing': 'Fabricação',
     
     // Hero
     'hero.tagline': 'A melhor proteção para sua moto',
@@ -46,6 +48,14 @@ const translations = {
     // Why Koov
     'why.title': 'Por que escolher KOOV COVER?',
     'why.subtitle': 'Projetado especificamente para motociclistas que buscam proteção prática e eficiente',
+    'why.feature1.title': 'Controle de qualidade direto',
+    'why.feature1.description': 'Supervisionamos cada etapa do processo de fabricação para garantir durabilidade e resistência',
+    'why.feature2.title': 'Preço de fábrica',
+    'why.feature2.description': 'Sem intermediários nem importadores. Você obtém o melhor preço direto do fabricante',
+    'why.feature3.title': 'Suporte especializado',
+    'why.feature3.description': 'Suporte técnico direto do fabricante com garantia total no seu investimento',
+    'why.main.title': '🇵🇪 Fabricantes peruanos com qualidade mundial',
+    'why.main.subtitle': 'Desenvolvido por peruanos que entendem nosso clima',
 
     // Benefits
     'benefits.title': 'Benefícios',
@@ -87,6 +97,8 @@ const translations = {
     // Footer
     'footer.rights': 'Todos os direitos reservados',
     'footer.designed': 'Projetado no Peru',
+    'footer.copyright': '© 2025 KOOV COVER. Todos os direitos reservados.',
+    'footer.product': 'KOOV COVER – Produto projetado no Peru',
 
     // Manufacturing
     'manufacturing.title': 'Fabricado sob Medida para sua Moto ou Espaço',
@@ -123,6 +135,32 @@ const translations = {
     'howItWorks.step5.description': 'Abra e feche a cúpula várias vezes para verificar o movimento. Ajuste as uniões se notar resistência.',
     'howItWorks.step6.title': 'Pronto para usar',
     'howItWorks.step6.description': 'Estacione sua moto dentro. Feche o KOOV COVER para protegê-la da chuva, sol, poeira e arranhões.',
+
+    // FAQ
+    'faq.title': 'Perguntas Frequentes',
+    'faq.subtitle': 'Resolvemos as dúvidas mais comuns sobre KOOV COVER',
+    'faq.1.question': 'Protege contra chuva intensa e poeira fina?',
+    'faq.1.answer': 'Sim, KOOV COVER é projetado com materiais impermeáveis de alta qualidade que protegem completamente contra chuva intensa, poeira fina e raios UV. Seu design hermético garante que sua moto permaneça completamente seca e limpa.',
+    'faq.2.question': 'Quanto tempo leva para desdobrar?',
+    'faq.2.answer': 'O processo de desdobramento leva entre 3 a 5 minutos. Graças ao seu design intuitivo e sistema de dobramento otimizado, qualquer pessoa pode montá-lo rapidamente sem necessidade de ferramentas especiais ou experiência prévia.',
+    'faq.3.question': 'Precisa de instalação fixa?',
+    'faq.3.answer': 'Não, KOOV COVER é completamente portátil. Não requer instalação permanente, parafusos ou modificações no solo. Você pode movê-lo facilmente para qualquer localização de acordo com suas necessidades.',
+    'faq.4.question': 'Serve para espaços reduzidos?',
+    'faq.4.answer': 'Absolutamente. KOOV COVER é especialmente projetado para espaços urbanos limitados como pátios pequenos, terraços, estacionamentos de apartamentos e áreas compactas onde garagens tradicionais não são viáveis.',
+    'faq.5.question': 'Como é limpo e mantido?',
+    'faq.5.answer': 'A manutenção é muito simples. Você só precisa limpar a superfície com água e sabão suave ocasionalmente. Os materiais são resistentes às intempéries e não requerem tratamentos especiais ou manutenção complexa.',
+    'faq.6.question': 'Fazem envios para todo o Peru?',
+    'faq.6.answer': 'Sim, realizamos envios em nível nacional. Temos cobertura em todas as principais cidades do Peru. Os tempos de entrega variam de acordo com a localização, mas geralmente oscilam entre 2 a 7 dias úteis.',
+
+    // WhatsApp Float
+    'whatsapp.aria': 'Contatar por WhatsApp',
+    'whatsapp.message': 'Olá, quero mais informações sobre KOOV COVER',
+    'whatsapp.custom': 'Olá, quero solicitar um KOOV COVER sob medida',
+
+    // Contact
+    'contact.title': 'Entre em Contato',
+    'contact.subtitle': 'Entre em contato conosco pelo WhatsApp',
+    'contact.cta': 'Entre em contato pelo WhatsApp',
   },
   es: {
     // Header
@@ -131,6 +169,8 @@ const translations = {
     'nav.questions': 'Preguntas',
     'nav.contact': 'Contacto',
     'nav.contactUs': 'Contáctanos',
+    'nav.home': 'Inicio',
+    'nav.manufacturing': 'Fabricación',
     
     // Hero
     'hero.title': 'TU MOTO SIEMPRE LIMPIA Y PROTEGIDA',
@@ -147,6 +187,14 @@ const translations = {
     // Why Koov
     'why.title': '¿Por qué elegir KOOV COVER?',
     'why.subtitle': 'Diseñado específicamente para motociclistas que buscan protección práctica y eficiente',
+    'why.feature1.title': 'Control de calidad directo',
+    'why.feature1.description': 'Supervisamos cada etapa del proceso de fabricación para garantizar durabilidad y resistencia',
+    'why.feature2.title': 'Precio de fábrica',
+    'why.feature2.description': 'Sin intermediarios ni importadores. Obtienes el mejor precio directo del fabricante',
+    'why.feature3.title': 'Soporte especializado',
+    'why.feature3.description': 'Respaldo técnico directo del fabricante con garantía total en tu inversión',
+    'why.main.title': '🇵🇪 Fabricantes peruanos con calidad mundial',
+    'why.main.subtitle': 'Desarrollado por peruanos que entienden nuestro clima',
     
     // Benefits
     'benefits.title': 'Beneficios',
@@ -243,9 +291,16 @@ const translations = {
     'faq.6.question': '¿Hacen envíos a todo el Perú?',
     'faq.6.answer': 'Sí, realizamos envíos a nivel nacional. Contamos con cobertura en todas las principales ciudades del Perú. Los tiempos de entrega varían según la ubicación, pero generalmente oscilan entre 2 a 7 días hábiles.',
 
+    // Contact
+    'contact.title': 'Contáctanos',
+    'contact.subtitle': 'Ponte en contacto con nosotros a través de WhatsApp',
+    'contact.cta': 'Contáctanos por WhatsApp',
+
     // Footer 
     'footer.rights': 'Todos los derechos reservados',
     'footer.designed': 'Diseñado en Perú',
+    'footer.copyright': '© 2025 KOOV COVER. Todos los derechos reservados.',
+    'footer.product': 'KOOV COVER – Producto diseñado en Perú',
 
     // Manufacturing
     'manufacturing.title': 'Fabricado a Medida para tu Moto o Espacio',
@@ -290,6 +345,8 @@ const translations = {
     'nav.questions': 'Questions',
     'nav.contact': 'Contact',
     'nav.contactUs': 'Contact Us',
+    'nav.home': 'Home',
+    'nav.manufacturing': 'Manufacturing',
     
     // Hero
     'hero.title': 'YOUR MOTORCYCLE ALWAYS CLEAN AND PROTECTED',
@@ -306,6 +363,14 @@ const translations = {
     // Why Koov
     'why.title': 'Why choose KOOV COVER?',
     'why.subtitle': 'Specifically designed for motorcyclists looking for practical and efficient protection',
+    'why.feature1.title': 'Direct quality control',
+    'why.feature1.description': 'We supervise each stage of the manufacturing process to guarantee durability and resistance',
+    'why.feature2.title': 'Factory price',
+    'why.feature2.description': 'No intermediaries or importers. You get the best price directly from the manufacturer',
+    'why.feature3.title': 'Specialized support',
+    'why.feature3.description': 'Direct technical support from the manufacturer with total guarantee on your investment',
+    'why.main.title': '🇵🇪 Peruvian manufacturers with world quality',
+    'why.main.subtitle': 'Developed by Peruvians who understand our climate',
     
     // Benefits
     'benefits.title': 'Benefits',
@@ -347,6 +412,8 @@ const translations = {
     // Footer
     'footer.rights': 'All rights reserved',
     'footer.designed': 'Designed in Peru',
+    'footer.copyright': '© 2025 KOOV COVER. All rights reserved.',
+    'footer.product': 'KOOV COVER – Product designed in Peru',
 
     // Location
     'location.title': 'Our Office',
@@ -441,33 +508,46 @@ const translations = {
     'howItWorks.step5.description': 'Open and close the dome several times to check movement. Adjust joints if you notice resistance.',
     'howItWorks.step6.title': 'Ready to use',
     'howItWorks.step6.description': 'Park your motorcycle inside. Close the KOOV COVER to protect it from rain, sun, dust and scratches.',
+
+    // WhatsApp Float
+    'whatsapp.aria': 'Contact via WhatsApp',
+    'whatsapp.message': 'Hello, I want more information about KOOV COVER',
+    'whatsapp.custom': 'Hello, I want to request a custom KOOV COVER',
   }
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false)
   const [language, setLanguage] = useState<Language>('es')
+  const [hasInitialized, setHasInitialized] = useState(false)
 
+  // Solo intentar cargar el idioma guardado una vez al montar
   useEffect(() => {
+    if (hasInitialized) return
+    
     setMounted(true)
     try {
       const savedLanguage = localStorage.getItem('koov-language')
       if (savedLanguage && ['es', 'en', 'pt-BR'].includes(savedLanguage)) {
         setLanguage(savedLanguage as Language)
       }
+      setHasInitialized(true)
     } catch (error) {
       console.error('Error accessing localStorage:', error)
+      setHasInitialized(true)
     }
-  }, [])
+  }, [hasInitialized])
 
+  // Guardar el idioma solo cuando cambie manualmente
   useEffect(() => {
-    if (!mounted) return
+    if (!mounted || !hasInitialized) return
     try {
       localStorage.setItem('koov-language', language)
+      console.log('Language saved:', language) // Debug log
     } catch (error) {
       console.error('Error saving to localStorage:', error)
     }
-  }, [language, mounted])
+  }, [language, mounted, hasInitialized])
 
   // Log cuando el idioma cambia
   useEffect(() => {

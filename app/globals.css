@@ -224,39 +224,95 @@
   }
 }
 
-/* Modo oscuro (por defecto) */
+/* Sistema de temas dinámico - Modo oscuro (por defecto) */
 :root {
-  --bg-primary: var(--koov-carbon);
-  --bg-secondary: var(--koov-dark-gray);
-  --bg-tertiary: var(--koov-graphite);
-  --text-primary: var(--koov-white);
-  --text-secondary: var(--koov-light-gray);
-  --text-muted: var(--koov-gray);
-  --border-color: var(--koov-graphite);
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  /* Fondos */
+  --theme-bg-primary: var(--koov-carbon);
+  --theme-bg-secondary: var(--koov-dark-gray);
+  --theme-bg-tertiary: var(--koov-graphite);
+  --theme-bg-card: var(--koov-dark-gray);
+  --theme-bg-section: var(--koov-black);
+  
+  /* Textos */
+  --theme-text-primary: var(--koov-white);
+  --theme-text-secondary: var(--koov-light-gray);
+  --theme-text-muted: var(--koov-gray);
+  --theme-text-accent: var(--koov-electric);
+  
+  /* Bordes y separadores */
+  --theme-border-color: var(--koov-graphite);
+  --theme-border-light: rgba(255, 255, 255, 0.1);
+  
+  /* Sombras */
+  --theme-shadow-sm: rgba(0, 0, 0, 0.3);
+  --theme-shadow-md: rgba(0, 0, 0, 0.4);
+  --theme-shadow-lg: rgba(0, 0, 0, 0.5);
+  
+  /* Estados hover */
+  --theme-hover-bg: rgba(255, 255, 255, 0.05);
+  --theme-hover-border: rgba(255, 255, 255, 0.2);
+  
+  /* Degradados */
+  --theme-gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 100%);
+  --theme-gradient-secondary: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  --theme-gradient-card: linear-gradient(145deg, #1a1a1a 0%, #2e2e2e 50%, #1a1a1a 100%);
+  --theme-gradient-subtle: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  
+  /* Colores de marca (siempre consistentes) */
+  --theme-brand-primary: var(--koov-electric);
+  --theme-brand-secondary: var(--koov-lime);
+  --theme-brand-accent: var(--koov-graphite);
 }
 
 /* Modo claro */
 .light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #e9ecef;
-  --text-primary: var(--koov-carbon);
-  --text-secondary: var(--koov-gray);
-  --text-muted: #6c757d;
-  --border-color: #dee2e6;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  /* Fondos */
+  --theme-bg-primary: #ffffff;
+  --theme-bg-secondary: #f8f9fa;
+  --theme-bg-tertiary: #e9ecef;
+  --theme-bg-card: #ffffff;
+  --theme-bg-section: #f8f9fa;
+  
+  /* Textos */
+  --theme-text-primary: var(--koov-carbon);
+  --theme-text-secondary: var(--koov-gray);
+  --theme-text-muted: #6c757d;
+  --theme-text-accent: var(--koov-electric);
+  
+  /* Bordes y separadores */
+  --theme-border-color: #dee2e6;
+  --theme-border-light: rgba(0, 0, 0, 0.1);
+  
+  /* Sombras */
+  --theme-shadow-sm: rgba(0, 0, 0, 0.1);
+  --theme-shadow-md: rgba(0, 0, 0, 0.15);
+  --theme-shadow-lg: rgba(0, 0, 0, 0.2);
+  
+  /* Estados hover */
+  --theme-hover-bg: rgba(0, 0, 0, 0.05);
+  --theme-hover-border: rgba(0, 0, 0, 0.1);
+  
+  /* Degradados */
+  --theme-gradient-primary: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --theme-gradient-secondary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --theme-gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+  --theme-gradient-subtle: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%);
+  
+  /* Colores de marca (siempre consistentes) */
+  --theme-brand-primary: var(--koov-electric);
+  --theme-brand-secondary: var(--koov-lime);
+  --theme-brand-accent: var(--koov-graphite);
 }
 
 @layer base {
   * {
-    border-color: var(--border-color);
-    outline-color: var(--koov-electric);
+    border-color: var(--theme-border-color);
+    outline-color: var(--theme-brand-primary);
   }
 
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: var(--theme-bg-primary);
+    color: var(--theme-text-primary);
     font-family: var(--font-sans);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -265,5 +321,36 @@
   h2,
   h3 {
     font-family: var(--font-mono);
+    color: var(--theme-text-primary);
   }
 }
+
+/* Clases utilitarias para temas */
+.theme-bg-primary { background-color: var(--theme-bg-primary); }
+.theme-bg-secondary { background-color: var(--theme-bg-secondary); }
+.theme-bg-tertiary { background-color: var(--theme-bg-tertiary); }
+.theme-bg-card { background-color: var(--theme-bg-card); }
+.theme-bg-section { background-color: var(--theme-bg-section); }
+
+.theme-text-primary { color: var(--theme-text-primary); }
+.theme-text-secondary { color: var(--theme-text-secondary); }
+.theme-text-muted { color: var(--theme-text-muted); }
+.theme-text-accent { color: var(--theme-text-accent); }
+
+.theme-border { border-color: var(--theme-border-color); }
+.theme-border-light { border-color: var(--theme-border-light); }
+
+.theme-shadow-sm { box-shadow: 0 1px 2px var(--theme-shadow-sm); }
+.theme-shadow-md { box-shadow: 0 4px 6px var(--theme-shadow-md); }
+.theme-shadow-lg { box-shadow: 0 10px 15px var(--theme-shadow-lg); }
+
+.theme-hover:hover { 
+  background-color: var(--theme-hover-bg); 
+  border-color: var(--theme-hover-border);
+}
+
+/* Clases de degradados */
+.theme-gradient-primary { background: var(--theme-gradient-primary); }
+.theme-gradient-secondary { background: var(--theme-gradient-secondary); }
+.theme-gradient-card { background: var(--theme-gradient-card); }
+.theme-gradient-subtle { background: var(--theme-gradient-subtle); }

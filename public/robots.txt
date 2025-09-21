@@ -1,0 +1,39 @@
+# Robots.txt para KOOV COVER
+# https://koovcover.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://koovcover.com/sitemap.xml
+
+# Archivos específicos
+Allow: /logo_koov_cover.svg
+Allow: /publicidad_koov_cover.png
+Allow: /Koovcover_en_campo.jpg
+Allow: /Koovcover_en_vereda.jpg
+Allow: /manifest.json
+
+# Bloquear archivos innecesarios para SEO
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /tsconfig.json
+Disallow: /next.config.mjs
+Disallow: /postcss.config.mjs
+
+# Crawl-delay para ser amigable con los servidores
+Crawl-delay: 1
+
+# Configuración específica para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Configuración específica para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

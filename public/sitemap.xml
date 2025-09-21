@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://koovcover.com/</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-pe" href="https://koovcover.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://koovcover.com/en" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://koovcover.com/pt" />
+    <image:image>
+      <image:loc>https://koovcover.com/publicidad_koov_cover.png</image:loc>
+      <image:title>KOOV COVER - Garaje Portátil Plegable para Motos</image:title>
+      <image:caption>Garaje portátil plegable fabricado en Perú para proteger motocicletas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://koovcover.com/Koovcover_en_campo.jpg</image:loc>
+      <image:title>KOOV COVER instalado en campo</image:title>
+      <image:caption>KOOV COVER protegiendo motocicleta en ambiente exterior</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://koovcover.com/en</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-pe" href="https://koovcover.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://koovcover.com/en" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://koovcover.com/pt" />
+  </url>
+  
+  <url>
+    <loc>https://koovcover.com/pt</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-pe" href="https://koovcover.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://koovcover.com/en" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://koovcover.com/pt" />
+  </url>
+
+</urlset>

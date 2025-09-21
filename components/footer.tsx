@@ -1,16 +1,20 @@
+"use client"
+
 import { Instagram, Facebook } from "lucide-react"
+import { useI18n } from "@/contexts/i18n-context"
 
 export default function Footer() {
+  const { t } = useI18n()
   return (
-    <footer className="bg-[var(--koov-carbon)] text-[var(--koov-white)] py-12 border-t border-[var(--koov-graphite)]">
+    <footer className="theme-bg-section theme-text-primary py-12 theme-border-light border-t">
       <div className="container-custom">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo & Copyright */}
           <div>
-            <div className="text-2xl font-mono font-bold mb-2 text-[var(--koov-white)]">KOOV COVER</div>
-            <p className="text-[var(--koov-light)] text-sm">© 2025 KOOV COVER. Todos los derechos reservados.</p>
-            <p className="text-[var(--koov-electric)] text-sm font-medium mt-1">
-              KOOV COVER – Producto diseñado en Perú
+            <div className="text-2xl font-mono font-bold mb-2 theme-text-primary">KOOV COVER</div>
+            <p className="theme-text-secondary text-sm">{t('footer.copyright')}</p>
+            <p className="theme-text-accent text-sm font-medium mt-1">
+              {t('footer.product')}
             </p>
           </div>
 
@@ -20,7 +24,7 @@ export default function Footer() {
                 href="https://www.instagram.com/koov.cover/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--koov-electric)] hover:text-[var(--koov-lime)] transition-colors duration-200"
+                className="theme-text-accent hover:text-[var(--theme-brand-secondary)] transition-colors duration-200"
                 aria-label="Instagram"
               >
                 <Instagram size={24} />
@@ -29,7 +33,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@koovcover"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--koov-electric)] hover:text-[var(--koov-lime)] transition-colors duration-200"
+                className="theme-text-accent hover:text-[var(--theme-brand-secondary)] transition-colors duration-200"
                 aria-label="TikTok"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -40,7 +44,7 @@ export default function Footer() {
                 href="https://www.facebook.com/koovcover/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--koov-electric)] hover:text-[var(--koov-lime)] transition-colors duration-200"
+                className="theme-text-accent hover:text-[var(--theme-brand-secondary)] transition-colors duration-200"
                 aria-label="Facebook"
               >
                 <Facebook size={24} />
@@ -50,9 +54,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="text-right">
-            <p className="text-[var(--koov-light)] text-sm">koovcover@gmail.com</p>
-            <p className="text-[var(--koov-light)] text-sm">WhatsApp: +51 949 165 670</p>
-            <p className="text-[var(--koov-light)] text-sm">Av. Colonial 3046, Cercado de Lima</p>
+            <p className="theme-text-secondary text-sm">koovcover@gmail.com</p>
+            <p className="theme-text-secondary text-sm">WhatsApp: +51 949 165 670</p>
+            <p className="theme-text-secondary text-sm">Av. Colonial 3046, Cercado de Lima</p>
           </div>
         </div>
       </div>
