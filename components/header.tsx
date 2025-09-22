@@ -69,10 +69,10 @@ export default function Header() {
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
               <Image
-                src="/logo_koov_cover.svg"
+                src="/logo/Logo-koovcover_negro.png"
                 alt="KOOV COVER Logo"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="rounded-lg object-cover"
               />
               <span className="text-2xl font-serif font-bold text-gray-900 flex items-center gap-2">
@@ -174,7 +174,7 @@ export default function Header() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-sm hidden md:inline-flex"
+              className="btn-primary text-sm hidden md:flex max-sm:!hidden"
             >
               {t('nav.contactUs')}
             </a>

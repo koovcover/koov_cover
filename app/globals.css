@@ -354,3 +354,10 @@
 .theme-gradient-secondary { background: var(--theme-gradient-secondary); }
 .theme-gradient-card { background: var(--theme-gradient-card); }
 .theme-gradient-subtle { background: var(--theme-gradient-subtle); }
+
+/* Asegurar que el botón de WhatsApp esté oculto en mobile */
+@media (max-width: 767px) {
+  .btn-primary.hidden {
+    display: none !important;
+  }
+}
