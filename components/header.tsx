@@ -4,12 +4,14 @@ import { Instagram, Facebook, Menu, X } from "lucide-react"
 import { useI18n } from "@/contexts/i18n-context"
 import { useState, useEffect } from "react"
 import { ThemeLanguageSelector } from "./theme-language-selector"
+import { useTheme } from "next-themes"
 
 export default function Header() {
   const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("inicio")
   const { t } = useI18n()
+  const { theme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -59,7 +61,11 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-lg">
+    <header className={`fixed top-0 w-full z-50 shadow-lg backdrop-blur-sm border-b ${
+      mounted && theme === 'light' 
+        ? 'bg-white/95 border-gray-200' 
+        : 'bg-gray-950/95 border-gray-800'
+    }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -69,13 +75,15 @@ export default function Header() {
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
               <Image
-                src="/logo/Logo-koovcover_negro.png"
+                src={mounted && theme === 'light' ? "/logo/Logo-koovcover_negro.png" : "/logo/Logo-koovcover_blanco.png"}
                 alt="KOOV COVER Logo"
                 width={60}
                 height={60}
                 className="rounded-lg object-cover"
               />
-              <span className="text-2xl font-serif font-bold text-gray-900 flex items-center gap-2">
+              <span className={`text-2xl font-serif font-bold flex items-center gap-2 ${
+                mounted && theme === 'light' ? 'text-gray-900' : 'text-white'
+              }`}>
                 KOOV COVER
               </span>
             </button>
@@ -90,7 +98,7 @@ export default function Header() {
                   className={`transition-colors font-medium ${
                     activeSection === "beneficios" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-gray-700 hover:text-[var(--koov-electric)]"
+                      : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)]" : "text-gray-300 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.benefits')}
@@ -100,7 +108,7 @@ export default function Header() {
                   className={`transition-colors font-medium ${
                     activeSection === "como-funciona" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-gray-700 hover:text-[var(--koov-electric)]"
+                      : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)]" : "text-gray-300 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.howItWorks')}
@@ -110,7 +118,7 @@ export default function Header() {
                   className={`transition-colors font-medium ${
                     activeSection === "preguntas" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-gray-700 hover:text-[var(--koov-electric)]"
+                      : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)]" : "text-gray-300 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.questions')}
@@ -120,7 +128,7 @@ export default function Header() {
                   className={`transition-colors font-medium ${
                     activeSection === "contacto" 
                       ? "text-[var(--koov-electric)]" 
-                      : "text-gray-700 hover:text-[var(--koov-electric)]"
+                      : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)]" : "text-gray-300 hover:text-[var(--koov-electric)]"
                   }`}
                 >
                   {t('nav.contact')}
@@ -137,7 +145,9 @@ export default function Header() {
                 href="https://www.instagram.com/koov.cover/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
+                className={`hover:text-[var(--koov-electric)] transition-colors ${
+                  mounted && theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                }`}
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -146,7 +156,9 @@ export default function Header() {
                 href="https://www.tiktok.com/@koovcover"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
+                className={`hover:text-[var(--koov-electric)] transition-colors ${
+                  mounted && theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                }`}
                 aria-label="TikTok"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -157,7 +169,9 @@ export default function Header() {
                 href="https://www.facebook.com/profile.php?id=61579959260936"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
+                className={`hover:text-[var(--koov-electric)] transition-colors ${
+                  mounted && theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                }`}
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -182,7 +196,9 @@ export default function Header() {
             {/* Mobile menu toggle */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 text-gray-700 hover:text-[var(--koov-electric)] transition-colors"
+              className={`md:hidden p-2 hover:text-[var(--koov-electric)] transition-colors ${
+                mounted && theme === 'light' ? 'text-gray-700' : 'text-gray-300'
+              }`}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -192,14 +208,18 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && mounted && (
-          <div className="md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm">
+          <div className={`md:hidden border-t backdrop-blur-sm ${
+            mounted && theme === 'light' 
+              ? 'border-gray-200 bg-white/95' 
+              : 'border-gray-800 bg-gray-950/95'
+          }`}>
             <nav className="py-4 space-y-2">
               <button
                 onClick={() => scrollToSection("inicio")}
                 className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "inicio" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
+                    : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50" : "text-gray-300 hover:text-[var(--koov-electric)] hover:bg-gray-800"
                 }`}
               >
                 {t('nav.home')}
@@ -209,7 +229,7 @@ export default function Header() {
                 className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "beneficios" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
+                    : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50" : "text-gray-300 hover:text-[var(--koov-electric)] hover:bg-gray-800"
                 }`}
               >
                 {t('nav.benefits')}
@@ -219,7 +239,7 @@ export default function Header() {
                 className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "fabricacion-medida" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
+                    : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50" : "text-gray-300 hover:text-[var(--koov-electric)] hover:bg-gray-800"
                 }`}
               >
                 {t('nav.manufacturing')}
@@ -229,7 +249,7 @@ export default function Header() {
                 className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "como-funciona" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
+                    : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50" : "text-gray-300 hover:text-[var(--koov-electric)] hover:bg-gray-800"
                 }`}
               >
                 {t('nav.howItWorks')}
@@ -239,7 +259,7 @@ export default function Header() {
                 className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "preguntas" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
+                    : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50" : "text-gray-300 hover:text-[var(--koov-electric)] hover:bg-gray-800"
                 }`}
               >
                 {t('nav.questions')}
@@ -249,7 +269,7 @@ export default function Header() {
                 className={`block w-full text-left px-4 py-2 transition-colors font-medium ${
                   activeSection === "contacto" 
                     ? "text-[var(--koov-electric)] bg-[var(--koov-electric)]/10" 
-                    : "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50"
+                    : mounted && theme === 'light' ? "text-gray-700 hover:text-[var(--koov-electric)] hover:bg-gray-50" : "text-gray-300 hover:text-[var(--koov-electric)] hover:bg-gray-800"
                 }`}
               >
                 {t('nav.contact')}
@@ -271,13 +291,17 @@ export default function Header() {
               </div>
 
               {/* Mobile social links */}
-              <div className="px-4 py-2 border-t border-gray-200 mt-2 pt-4">
+              <div className={`px-4 py-2 border-t mt-2 pt-4 ${
+                mounted && theme === 'light' ? 'border-gray-200' : 'border-gray-800'
+              }`}>
                 <div className="flex items-center justify-center gap-6">
                   <a
                     href="https://www.instagram.com/koov.cover/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
+                    className={`hover:text-[var(--koov-electric)] transition-colors ${
+                      mounted && theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                    }`}
                     aria-label="Instagram"
                   >
                     <Instagram size={24} />
@@ -286,7 +310,9 @@ export default function Header() {
                     href="https://www.tiktok.com/@koovcover"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
+                    className={`hover:text-[var(--koov-electric)] transition-colors ${
+                      mounted && theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                    }`}
                     aria-label="TikTok"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -297,7 +323,9 @@ export default function Header() {
                     href="https://www.facebook.com/profile.php?id=61579959260936"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-[var(--koov-electric)] transition-colors"
+                    className={`hover:text-[var(--koov-electric)] transition-colors ${
+                      mounted && theme === 'light' ? 'text-gray-600' : 'text-gray-400'
+                    }`}
                     aria-label="Facebook"
                   >
                     <Facebook size={24} />

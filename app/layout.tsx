@@ -35,13 +35,23 @@ export const metadata = {
   copyright: "© 2025 KOOV COVER",
   robots: "index, follow",
   keywords: "KOOV COVER, koov cover precio, koov cover peru, garaje portátil moto, protector moto, cochera plegable, garaje móvil motocicleta, protección moto lluvia, carpa moto plegable, garage portátil Lima, protector solar moto, cochera temporal moto, fabricado en Perú, garaje desmontable",
+  icons: {
+    icon: "/logo_koov_cover.svg",
+    shortcut: "/logo_koov_cover.svg",
+    apple: "/logo_koov_cover.svg",
+  },
   openGraph: {
     siteName: "KOOV COVER",
     title: "KOOV COVER - Garaje Portátil Plegable para Motos",
     description: "Protege tu moto con KOOV COVER y viaja con tranquilidad. Garaje portátil fabricado en Perú. Consulta precios y cotiza gratis.",
-    image: "/assets/logo_koov_cover.svg",
-    imageWidth: 1200,
-    imageHeight: 630,
+    images: [
+      {
+        url: "/logo_koov_cover.svg",
+        width: 1200,
+        height: 630,
+        alt: "KOOV COVER Logo",
+      }
+    ],
     url: "https://koovcover.com/",
     type: "website",
   },
@@ -49,7 +59,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "KOOV COVER - Garaje Portátil para Motos en Perú",
     description: "Protege tu moto con KOOV COVER. Garaje portátil plegable fabricado en Perú.",
-    image: "/assets/logo_koov_cover.svg",
+    images: ["/logo_koov_cover.svg"],
   },
   other: {
     "geo.region": "PE",
@@ -77,9 +87,7 @@ export default function RootLayout({
         {/* Configuración de compatibilidad */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         
-        {/* Favicon */}
-        <link rel="icon" href="/assets/logo_koov_cover.svg" type="image/svg+xml" sizes="32x32" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo_koov_cover.svg" />
+        {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
         
         {/* JSON-LD Structured Data */}
@@ -97,13 +105,36 @@ export default function RootLayout({
                 "@type": "Brand",
                 "name": "KOOV COVER",
                 "url": "https://koovcover.com/",
-                "logo": "https://koovcover.com/assets/logo_koov_cover.svg"
+                "logo": "https://koovcover.com/logo_koov_cover.svg"
               },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "PEN",
-                "price": "Desde 299",
-                "url": "https://koovcover.com/"
+                "price": "299.00",
+                "lowPrice": "299.00",
+                "availability": "https://schema.org/InStock",
+                "url": "https://koovcover.com/",
+                "priceValidUntil": "2025-12-31",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "PEN"
+                  },
+                  "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "businessDays": {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+                    }
+                  }
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "merchantReturnDays": 30
+                }
               },
               "manufacturer": {
                 "@type": "Organization",
@@ -128,7 +159,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem={true}
           disableTransitionOnChange
         >
